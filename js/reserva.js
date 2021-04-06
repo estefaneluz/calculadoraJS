@@ -1,10 +1,10 @@
 let op2, op1, aux = 0;
 
 document.getElementById("botoes").addEventListener('click',function(event){
-
-   if (event.target.innerText>=0 && event.target.innerText<=9 || event.target.id===".") {
-    document.getElementById("output").innerHTML += event.target.innerText;
-    op2 += event.target.innerText; 
+  const num1 = parseFloat(event.target.id);
+  if (num1>=0 && num1<=9) {
+    document.getElementById("output").innerHTML += num1;
+    op2 += num1; 
   }
   else if(event.target.id === "clean-all") {
     document.getElementById("output").innerHTML = "";
@@ -16,8 +16,6 @@ document.getElementById("botoes").addEventListener('click',function(event){
     aux = parseInt(event.target.value); 
   }
   else if(event.target.id === "=") {
-    op1 =parseFloat(op1);
-    op2 = parseFloat(op2);
     let resultado = 0; 
     switch(aux) {
       case 1: //dividir 
