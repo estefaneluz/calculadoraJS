@@ -9,11 +9,42 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  background-color: #48a7b1;
+  min-height: 100vh;
 }
 
 .calculadora {
-  width: 500px;
-  height: 1000px;
-  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  background-color: #e1e1e1;
+  align-items: center;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.container-resposta {
+  width: 100%;
+  height: 50px;
+  background-color: #bed0d1;
+  border: 1px solid #48a7b1;
+  border-radius: 4px;
+}
+
+.botoes {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.btn.maior {
+  width: 120px;
 }
