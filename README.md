@@ -11,4 +11,4 @@ Os dois tutoriais utilizados para a obtenção desse efeito foram:
 
 ## Melhorias futuras 
 - [ ] Responsividade 
-- [ ] Limpar automaticamente o resultado anterior quando o usuário clicar em um novo numero  
+- [x] Limpar automaticamente o resultado anterior quando o usuário clicar em um novo numero  
