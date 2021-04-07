@@ -1,3 +1,4 @@
+/* ESTILOS GERAIS */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,37 +7,145 @@
 }
 
 body {
+  overflow: hidden;
+  color: white;
+}
+
+/* BACKGROUND */
+
+section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: #48a7b1;
   min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #161623;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  top: -250px;
+  left: 300px;
+  width: 80%;
+  height: 80%;
+  background: linear-gradient(#f00, #f0f);
+  clip-path: circle();
+  z-index: 2;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 300px;
+  width: 80%;
+  height: 80%;
+  background: linear-gradient(#e91e63, #2196f3);
+  clip-path: circle(30% at bottom);
+}
+
+/* CAIXAS QUE VOAM */
+
+.box {
+  position: relative;
+}
+
+.box .square {
+  position: absolute;
+  animation: animate 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+
+.box .square,
+.calculadora,
+button {
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(-40px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+}
+
+.box .square:nth-child(1) {
+  top: -50px;
+  right: -60px;
+  width: 100px;
+  height: 100px;
+  z-index: 11;
+}
+
+.box .square:nth-child(2) {
+  top: 150px;
+  left: -100px;
+  width: 120px;
+  height: 120px;
+  z-index: 13;
+}
+
+.box .square:nth-child(3) {
+  bottom: 50px;
+  right: -60px;
+  width: 80px;
+  height: 80px;
+  z-index: 13;
+}
+
+.box .square:nth-child(4) {
+  bottom: -80px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+}
+
+.box .square:nth-child(5) {
+  top: -80px;
+  left: 140px;
+  width: 60px;
+  height: 60px;
+  z-index: 11;
+}
+
+/* CALCULADORA */
+
+.calculadora,
+.container-output {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
 }
 
 .calculadora {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   width: 350px;
-  background-color: #e1e1e1;
   align-items: center;
-  margin-top: 50px;
   padding: 20px;
+  z-index: 12;
 }
 
 .container-output {
   width: 100%;
   height: 50px;
-  background-color: #bed0d1;
-  border: 1px solid #48a7b1;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
 }
 
 .container-output p {
   text-align: right;
-  padding: 5px;
+  padding: 10px;
+  overflow: hidden;
 }
 
 .botoes {
@@ -51,6 +160,14 @@ button {
   width: 50px;
   height: 50px;
   margin: 10px;
+  border-radius: 5px;
+  color: white;
+  text-shadow: 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  background: #2196f3;
+  cursor: pointer;
 }
 
 button.maior {

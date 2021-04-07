@@ -2,7 +2,7 @@ let op2, op1, aux = 0;
 
 document.getElementById("botoes").addEventListener('click',function(event){
   
-   if (event.target.innerText>=0 && event.target.innerText<=9 || event.target.id===".") {
+  if (event.target.innerText>=0 && event.target.innerText<=9 || event.target.id===".") {
     document.getElementById("output").innerHTML += event.target.innerText;
     op2 += event.target.innerText; 
   }
@@ -33,6 +33,5 @@ document.getElementById("botoes").addEventListener('click',function(event){
         break;
     }
     document.getElementById("output").innerHTML = resultado;
-
   }
 })
