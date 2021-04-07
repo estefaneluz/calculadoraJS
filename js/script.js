@@ -1,9 +1,15 @@
 let op2, op1, aux = 0;
+let novoNumero = true; 
 
 document.getElementById("botoes").addEventListener('click',function(event){
   
   if (event.target.innerText>=0 && event.target.innerText<=9 || event.target.id===".") {
-    document.getElementById("output").innerHTML += event.target.innerText;
+    if(novoNumero) {
+      document.getElementById("output").innerHTML = event.target.innerText;
+      novoNumero = false; 
+    } else {
+      document.getElementById("output").innerHTML += event.target.innerText;
+    }
     op2 += event.target.innerText; 
   }
   else if(event.target.id === "clean-all") {
@@ -33,5 +39,6 @@ document.getElementById("botoes").addEventListener('click',function(event){
         break;
     }
     document.getElementById("output").innerHTML = resultado;
+    novoNumero = true; 
   }
 })
