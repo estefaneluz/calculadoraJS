@@ -1,5 +1,6 @@
 let op2, op1, aux = 0;
 let novoNumero = true; 
+let novaOperacao = true; 
 
 document.getElementById("botoes").addEventListener('click',function(event){
   
@@ -14,10 +15,19 @@ document.getElementById("botoes").addEventListener('click',function(event){
   }
   else if(event.target.id === "clean-all") {
     document.getElementById("output").innerHTML = "";
+    novaOperacao = true;
   }
   else if(event.target.value >= "1" && event.target.value <="4") {
+    //verficação para não permitir que tentem fazer outra conta ao msm tempo 
+    //ex: 2+- ou 2 + 2 x 3 
     op1 = parseFloat(document.getElementById("output").innerText);
-    document.getElementById("output").innerHTML += " "+ event.target.innerText+ " ";
+
+    if(novaOperacao) { 
+      document.getElementById("output").innerHTML += " "+ event.target.innerText+ " ";
+      novaOperacao = false;
+    } else {
+      document.getElementById("output").innerHTML = op1 +" "+ event.target.innerText+ " ";
+    }
     op2 = 0;
     aux = parseInt(event.target.value); 
   }
@@ -40,5 +50,6 @@ document.getElementById("botoes").addEventListener('click',function(event){
     }
     document.getElementById("output").innerHTML = resultado;
     novoNumero = true; 
+    novaOperacao = true;
   }
 })
