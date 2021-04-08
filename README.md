@@ -10,5 +10,6 @@ Os dois tutoriais utilizados para a obtenção desse efeito foram:
 - [Real Glassmorphism Card Hover Effects](https://youtu.be/hv0rNxr1XXk)
 
 ## Melhorias futuras 
-- [ ] Responsividade 
 - [x] Limpar automaticamente o resultado anterior quando o usuário clicar em um novo numero  
+- [ ] Fazer mais de uma operação por vez. Ex: 2 + 2 * 3 
+- [ ] Responsividade 
